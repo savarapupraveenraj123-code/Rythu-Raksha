@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white text-ink font-sans antialiased;
+  }
+}
+
+@layer components {
+  .card-base {
+    @apply bg-white rounded-2xl shadow-card border border-green-50 transition-all duration-300;
+  }
+  .card-soft {
+    @apply bg-brand-green-soft rounded-2xl border border-brand-green-100 transition-all duration-300;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-brand-green-800 text-white font-semibold shadow-soft transition-all duration-300 hover:bg-brand-green-700 hover:shadow-card-hover active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white text-brand-green-800 font-semibold border-2 border-brand-green-200 transition-all duration-300 hover:bg-brand-green-50 hover:border-brand-green-400 active:scale-95;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg text-muted font-medium transition-all duration-200 hover:bg-brand-green-50 hover:text-brand-green-800;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #f0fdf4 25%, #dcfce7 50%, #f0fdf4 75%);
+  background-size: 1000px 100%;
+  @apply animate-shimmer rounded-lg;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-brand-green-50;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-brand-green-200 rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-brand-green-300;
+}
